@@ -1,1 +1,10 @@
-Quelques notes afin d'éclairer nos choix pour les classes java.
+Quelques notes afin d'éclairer nos choix pour les classes java et noter le travail à faire.
+Télécharger les plugins Scene builder.
+Faire une interface.
+Implémenter toutes les méthodes et calculs.
+Tout regrouper dans Chiffrement RSA (code métier)
+Interface devra permettre : Envoyer Message, Intercepter
+Envoyer Message fera tout le taff et affichera le message décodé à nouveau sur une autre fenêtre (si possible).
+Intercepter permettra de consulter le message lors du chiffrement RSA (étapes par étapes).
+Précisément: On affichera la string de base, puis la séparation, puis l'attribution en ascii (puis le groupage si possible),
+puis le codage puis décodage, (puis le dégroupage), puis reformage de la string et affichage de cette dernière.
