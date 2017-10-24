@@ -5,4 +5,5 @@ package fr.univ_amu.iut;
  */
 public class CalculeurVariableSimple {
     private int var1;
+    private int var2;
 }
