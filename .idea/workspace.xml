@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="febccebe-fd76-4e7d-8b97-de3a3b780aef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fr/univ_amu/iut/CalculeurVariableSimple.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_amu/iut/CalculeurVariableSimple.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -654,7 +653,7 @@
       <option name="presentableId" value="Default" />
       <updated>1508490678819</updated>
       <workItem from="1508490681739" duration="2937000" />
-      <workItem from="1508856897645" duration="485000" />
+      <workItem from="1508856897645" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="Lancement du git">
       <created>1508491823362</created>
@@ -691,11 +690,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508857149243</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initialisation du Git &amp; test2">
+      <created>1508857388980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1508857388980</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3422000" />
+    <option name="totallyTimeSpent" value="3447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1682" height="1024" extended-state="6" />
@@ -739,7 +745,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lancement du git" />
     <MESSAGE value="Initialisation du Git" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialisation du Git" />
+    <MESSAGE value="Initialisation du Git &amp; test2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialisation du Git &amp; test2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
