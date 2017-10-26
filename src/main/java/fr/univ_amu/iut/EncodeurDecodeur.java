@@ -13,11 +13,8 @@ public class EncodeurDecodeur{
 
     public Integer coder (Integer a, Integer e, Integer n){
         double M1;
-        double M2;
-        M1 = Math.pow(a,e);
-        int tmp = (int) M1;
-        M2 = Math.floorMod(tmp,n);
-        return (int) M2;
+        M1 = Math.pow(a,e) % n;
+        return (int) M1;
     }
 
     public ArrayList<Integer> decoder (ArrayList<Integer> listeCodee){
