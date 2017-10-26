@@ -162,4 +162,5 @@ public class Calculateur {
     public int getD() {
         return d;
     }
+
 }
