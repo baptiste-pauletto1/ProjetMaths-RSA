@@ -18,7 +18,6 @@ public class Calculateur {
     private int d;
 
     public Calculateur() {
-        System.out.printf("Calculateur créé." + "\n");
         calculersValeurs();
     }
 
@@ -49,7 +48,7 @@ public class Calculateur {
             return true;
         if (valeur % 2 == 0 || valeur == 0 || valeur == 1)
             return false;
-        for(int i = 3; i < valeur; i+= 2)
+        for(int i = 3; i < valeur; i+= 2) //l'optimisation en prenant l'entier en dessous de la racine ne fonctionne pas ici.
             if (valeur % i == 0)
                 return false;
         return true;
@@ -96,6 +95,7 @@ public class Calculateur {
     }
 
     private void rentrer_pEtq () {
+        System.out.println("Note: Il est nécessaire que le produit des deux deux entiers p & q soit supérieur à 100 (problème de conversion de typs en Java)");
         int p = menu("Veuillez insérer p, nombre premier");
         while (!testPrimalite(p)) {
             System.out.println("Il n'est pas premier. Exemple de nombres premiers : 2, 3, 5, 7, 11, 13, 17, 23, 31...");

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ManipulateurDeString {
 
     public ManipulateurDeString() {
-        System.out.println("Manipulateur de string créé.");
+
     }
 
     public ArrayList<Integer> decouperString(String string)
