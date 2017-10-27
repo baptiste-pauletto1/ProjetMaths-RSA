@@ -3,6 +3,7 @@ package fr.univ_amu.iut;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +15,19 @@ public class ChiffrementRSA {
         ManipulateurDeString manipulateurDeString = new ManipulateurDeString();
         ArrayList<Integer> tmp = manipulateurDeString.decouperString(message);
         System.out.println(tmp);
-        System.out.println(manipulateurDeString.reformerString(tmp));
+
+        EncodeurDecodeur encodeurDecodeur = new EncodeurDecodeur();
+        Calculateur calculateur = new Calculateur();
+        ArrayList<Integer> listeCodee = new ArrayList<Integer>();
+        for (int i = 0; i < tmp.size(); i++) {
+            listeCodee.add(encodeurDecodeur.coder(tmp.get(i),calculateur.getE(),calculateur.getN()));
+        }
+        System.out.println(listeCodee);
+        ArrayList<Integer> listeDecodee;
+        listeDecodee = encodeurDecodeur.decoder(listeCodee,calculateur.getD(),calculateur.getN());
+        System.out.println(manipulateurDeString.reformerString(listeDecodee));
+
+
     }
 
     public static String menu() {

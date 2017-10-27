@@ -49,7 +49,7 @@ public class Calculateur {
             return true;
         if (valeur % 2 == 0 || valeur == 0 || valeur == 1)
             return false;
-        for(int i = 3; i < (int) sqrt(valeur); i+= 2)
+        for(int i = 3; i < valeur; i+= 2)
             if (valeur % i == 0)
                 return false;
         return true;
