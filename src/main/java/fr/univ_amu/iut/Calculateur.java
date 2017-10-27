@@ -3,6 +3,7 @@ package fr.univ_amu.iut;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import static java.lang.Math.sqrt;
 
 /**
  * Created by p16005334 on 20/10/17.
@@ -48,7 +49,7 @@ public class Calculateur {
             return true;
         if (valeur % 2 == 0 || valeur == 0 || valeur == 1)
             return false;
-        for(int i = 3; i < valeur; i+= 2)
+        for(int i = 3; i < (int) sqrt(valeur); i+= 2)
             if (valeur % i == 0)
                 return false;
         return true;
