@@ -95,7 +95,7 @@ public class Calculateur {
     }
 
     private void rentrer_pEtq () {
-        System.out.println("Note: Il est nécessaire que le produit des deux deux entiers p & q soit supérieur à 100 (problème de conversion de typs en Java)");
+        System.out.println("Note: Il est nécessaire que le produit des deux deux entiers p & q soit supérieur à 100 (Définition du cryptage RSA)");
         int p = menu("Veuillez insérer p, nombre premier");
         while (!testPrimalite(p)) {
             System.out.println("Il n'est pas premier. Exemple de nombres premiers : 2, 3, 5, 7, 11, 13, 17, 23, 31...");

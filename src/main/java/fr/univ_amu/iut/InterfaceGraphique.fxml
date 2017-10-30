@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univ_amu.iut.InterfaceGraphique">
+   <children>
+      <BorderPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <TextField alignment="CENTER" editable="false" prefHeight="54.0" prefWidth="625.0" style="-fx-background-color: lightgrey;" text="Chat via Cryptage RSA " BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+         </top>
+         <center>
+            <VBox prefHeight="111.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField editable="false" text="Votre message :">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField promptText="Entrez votre message ici.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <HBox prefHeight="207.0" prefWidth="600.0">
+                     <children>
+                        <TextArea prefHeight="207.0" prefWidth="308.0" />
+                        <TextArea prefHeight="207.0" prefWidth="307.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="600.0">
+                     <children>
+                        <TextField alignment="CENTER" editable="false" prefHeight="35.0" prefWidth="301.0" style="-fx-background-color: lightgreen;" text="Vous" />
+                        <TextField alignment="CENTER" editable="false" prefHeight="35.0" prefWidth="301.0" style="-fx-background-color: cyan;" text="Votre destinataire" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="38.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="envoyerMessage" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="25.0" prefWidth="241.0" text="Envoyer message">
+                           <HBox.margin>
+                              <Insets left="30.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="voirEtapeParEtape" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="25.0" prefWidth="253.0" text="Voir étape par étape">
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Hyperlink fx:id="lienSagemaths" alignment="TOP_LEFT" text="Projet SageMaths">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="240.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
