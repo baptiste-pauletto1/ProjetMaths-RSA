@@ -12,7 +12,7 @@ public class EncodeurDecodeur{
 
     public EncodeurDecodeur(){}
 
-    public int coder (int a, int e, int n){
+    public static int coder (int a, int e, int n){
         BigInteger M = BigInteger.valueOf(a);
         BigInteger N = BigInteger.valueOf(n);
         M = M.pow(e);
@@ -21,7 +21,7 @@ public class EncodeurDecodeur{
         return m;
     }
 
-    public ArrayList<Integer> decoder (ArrayList<Integer> listeCodee, int d, int n){
+    public static ArrayList<Integer> decoder (ArrayList<Integer> listeCodee, int d, int n){
         ArrayList<Integer> listeDecodee = new ArrayList<Integer>();
         for (int i = 0; i < listeCodee.size(); i++) {
             listeDecodee.add(coder(listeCodee.get(i),d,n));

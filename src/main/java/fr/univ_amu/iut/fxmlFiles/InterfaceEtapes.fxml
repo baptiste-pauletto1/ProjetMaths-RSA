@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univ_amu.iut.InterfaceGraphique">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <TextField alignment="CENTER" editable="false" prefHeight="54.0" prefWidth="625.0" style="-fx-background-color: lightgrey;" text="Chat via Cryptage RSA : Mode Etape" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+         </top>
+         <left>
+            <VBox prefHeight="346.0" prefWidth="300.0" style="-fx-background-color: gold;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField editable="false" text="Message :" />
+                  <TextField fx:id="chaineInitiale" promptText="Entrez votre message ici." />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField editable="false" text="Séparation en caractère + table ASCII :" />
+                  <TextField fx:id="chaineSepareeAscii" editable="false" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField editable="false" text="Groupage :" />
+                  <TextField fx:id="chaineGroupee" editable="false" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField editable="false" text="Codage :" />
+                  <TextField fx:id="chaineCodee" editable="false" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Separator>
+                  <Button fx:id="nextStep" mnemonicParsing="false" onAction="#doNextStep" text="Prochaine étape">
+                     <VBox.margin>
+                        <Insets left="100.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox prefHeight="346.0" prefWidth="300.0" style="-fx-background-color: gold;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField editable="false" text="Décodage :" />
+                  <TextField fx:id="chaineDecodee" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField editable="false" text="Dégroupage :" />
+                  <TextField fx:id="chaineDegroupee" editable="false" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField editable="false" text="Retour ASCII -&gt; Caractère -&gt; Chaine" />
+                  <TextField fx:id="chaineReconstituee" editable="false" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField editable="false" text="Message reçu :" />
+                  <TextField fx:id="chaineRecue" editable="false" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Separator>
+                  <Button cancelButton="true" mnemonicParsing="false" text="Quitter">
+                     <VBox.margin>
+                        <Insets left="120.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <Separator orientation="VERTICAL" prefHeight="200.0" style="-: ;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
