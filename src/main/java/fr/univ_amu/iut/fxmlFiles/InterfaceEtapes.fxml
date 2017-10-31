@@ -21,8 +21,28 @@
          <left>
             <VBox prefHeight="346.0" prefWidth="300.0" style="-fx-background-color: gold;" BorderPane.alignment="CENTER">
                <children>
+                  <HBox prefHeight="24.0" prefWidth="300.0">
+                     <children>
+                        <TextField fx:id="textFieldp" promptText="Votre p " />
+                        <TextField fx:id="textFieldq" promptText="Votre q">
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Separator>
+                  <TextField editable="false" style="-fx-background-color: transparent;" text="Rappel : p*q &gt; 100 (Def RSA)">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </TextField>
                   <TextField editable="false" text="Message :" />
-                  <TextField fx:id="chaineInitiale" promptText="Entrez votre message ici." />
+                  <TextField fx:id="chaineInitiale" editable="false" promptText="Entrez votre message ici." />
                   <Separator prefWidth="200.0" style="-fx-background-color: black;">
                      <opaqueInsets>
                         <Insets />
@@ -60,7 +80,7 @@
                   </Separator>
                   <Button fx:id="nextStep" mnemonicParsing="false" onAction="#doNextStep" text="Prochaine étape">
                      <VBox.margin>
-                        <Insets left="100.0" top="30.0" />
+                        <Insets left="100.0" top="10.0" />
                      </VBox.margin>
                   </Button>
                </children>
@@ -69,6 +89,28 @@
          <right>
             <VBox prefHeight="346.0" prefWidth="300.0" style="-fx-background-color: gold;" BorderPane.alignment="CENTER">
                <children>
+                  <HBox prefHeight="25.0" prefWidth="300.0">
+                     <children>
+                        <TextField editable="false" text="Votre clef privée :">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="textFieldClefPrivee" editable="false" promptText="couple (d,n)">
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" style="-fx-background-color: black;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="19.0" />
+                     </VBox.margin>
+                  </Separator>
                   <TextField editable="false" text="Décodage :" />
                   <TextField fx:id="chaineDecodee" />
                   <Separator prefWidth="200.0" style="-fx-background-color: black;">
@@ -108,7 +150,7 @@
                   </Separator>
                   <Button cancelButton="true" mnemonicParsing="false" text="Quitter">
                      <VBox.margin>
-                        <Insets left="120.0" top="30.0" />
+                        <Insets left="120.0" top="10.0" />
                      </VBox.margin>
                   </Button>
                </children>

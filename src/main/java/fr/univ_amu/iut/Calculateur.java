@@ -21,6 +21,15 @@ public class Calculateur {
         calculersValeurs();
     }
 
+    public Calculateur(int p, int q){
+        this.p = p;
+        this.q = q;
+        calculer_n();
+        calculer_phin();
+        calculer_e();
+        calculer_d();
+    }
+
     private void calculersValeurs () {
         rentrer_pEtq();
         calculer_n();
@@ -43,7 +52,7 @@ public class Calculateur {
         return Integer.parseInt(choix);
     }
 
-    private boolean testPrimalite (int valeur) {
+    public static boolean testPrimalite (int valeur) {
         if (valeur == 2)
             return true;
         if (valeur % 2 == 0 || valeur == 0 || valeur == 1)
@@ -114,6 +123,7 @@ public class Calculateur {
     private void calculer_n () {
         n = p * q;
     }
+
 
     private void calculer_phin () {
         phin = (p-1) * (q-1);

@@ -25,6 +25,7 @@ public class ChiffrementRSA {
         System.out.println(listeCodee);
         ArrayList<Integer> listeDecodee;
         listeDecodee = encodeurDecodeur.decoder(listeCodee,calculateur.getD(),calculateur.getN());
+
         System.out.println(manipulateurDeString.reformerString(listeDecodee));
 
 

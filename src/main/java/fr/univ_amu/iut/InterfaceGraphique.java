@@ -22,8 +22,9 @@ import java.util.ArrayList;
  */
 public class InterfaceGraphique extends Application{
     private static Stage primStage;
-    private int compteurMsg;
-    private int compteurStep;
+    private int compteurMsg, compteurStep = 0;
+    ArrayList<Integer> chaineDecoupee, listeCodee, listeDecodee;
+    Calculateur calculateur;
 
     @FXML
     private TextField afficheurTour;
@@ -51,6 +52,13 @@ public class InterfaceGraphique extends Application{
     private TextField chaineReconstituee;
     @FXML
     private TextField chaineRecue;
+    @FXML
+    private TextField textFieldp;
+    @FXML
+    private TextField textFieldq;
+    @FXML
+    private TextField textFieldClefPrivee;
+
 
     public static Stage getPrimaryStage() {
         return primStage;
@@ -94,11 +102,11 @@ public class InterfaceGraphique extends Application{
         ++compteurMsg;
         if (compteurMsg%2 !=0) {
             afficheurTour.setText("Le message de votre interlocuteur : ");
-            textAreaDestinataire.setText(textAreaDestinataire.getText() + "\n" + contenu);
+            textAreaDestinataire.setText( textAreaDestinataire.getText() + "[" + LocalTime.now() + "] : " + contenu  + "\n");
         }
         else {
             afficheurTour.setText("Votre message : ");
-            textAreaVous.setText(textAreaVous.getText() + "\n" + contenu);
+            textAreaVous.setText(  textAreaVous.getText() + "[" + LocalTime.now() + "] : " + contenu + "\n");
 
         }
         message.clear();
@@ -109,59 +117,73 @@ public class InterfaceGraphique extends Application{
     }
 
     public void doNextStep (ActionEvent event) throws Exception {
-        ArrayList<Integer> chaineDecoupee = ManipulateurDeString.decouperString(chaineInitiale.getText());;
-        ArrayList<Integer> listeCodee = new ArrayList<Integer>();
-        ArrayList<Integer> listeDecodee = new ArrayList<>();
         switch (compteurStep){
-            case 0: {
+            case 0:{
+                while(Calculateur.testPrimalite(Integer.parseInt(textFieldp.getText())) != true)  {
+                        textFieldp.clear();
+                        textFieldp.setPromptText("P doit être premier");
+                }
+                while(Calculateur.testPrimalite(Integer.parseInt(textFieldq.getText())) != true)   {
+                        textFieldq.clear();
+                        textFieldq.setPromptText("Q doit être premier");
+                }
+                ++compteurStep;
+                chaineInitiale.setEditable(true);
+                return;
+            }
+            case 1: {
+                calculateur = new Calculateur(Integer.parseInt(textFieldp.getText()),Integer.parseInt(textFieldq.getText()));
+                chaineDecoupee = ManipulateurDeString.decouperString(chaineInitiale.getText());
                 chaineSepareeAscii.setText(chaineDecoupee.toString());
                 ++compteurStep;
                 return;
             }
-            case 1:{
+            case 2:{
                 chaineGroupee.setText("Pas encore fait cette merde");
                 ++compteurStep;
                 return;
             }
-            case 2:{
+            case 3:{
+                listeCodee = new ArrayList<>();
                 for (int i = 0; i < chaineDecoupee.size(); i++) {
-                    listeCodee.add(EncodeurDecodeur.coder(chaineDecoupee.get(i),19,187));
+                    listeCodee.add(EncodeurDecodeur.coder(chaineDecoupee.get(i),calculateur.getE(),calculateur.getN()));
                 }
                 chaineCodee.setText(listeCodee.toString());
                 ++compteurStep;
                 return;
             }
-            case 3:{ // IL FAUT SOIGNER CES CANCERS LA
-                for (int i = 0; i < chaineDecoupee.size(); i++) {
-                    listeCodee.add(EncodeurDecodeur.coder(chaineDecoupee.get(i),19,187));
-                }
-                // IL FAUT SOIGNER CES CANCERS LA
-                listeDecodee = EncodeurDecodeur.decoder(listeCodee,59,187);
+            case 4:{
+                textFieldClefPrivee.setText("(" + calculateur.getD() + "," + calculateur.getN() + ")");
+                listeDecodee = EncodeurDecodeur.decoder(listeCodee,calculateur.getD(),calculateur.getN());
                 chaineDecodee.setText(listeDecodee.toString());
                 ++compteurStep;
                 return;
             }
-            case 4:{
+            case 5:{
                 chaineDegroupee.setText("Cette merde non plus");
                 ++compteurStep;
                 return;
             }
-            case 5:{// IL FAUT SOIGNER CES CANCERS LA
-                for (int i = 0; i < chaineDecoupee.size(); i++) {
-                    listeCodee.add(EncodeurDecodeur.coder(chaineDecoupee.get(i),19,187));
-                }
-                // IL FAUT SOIGNER CES CANCERS LA
-                listeDecodee = EncodeurDecodeur.decoder(listeCodee,59,187);
+            case 6:{
                 ManipulateurDeString.reformerString(listeDecodee);
                 chaineReconstituee.setText(ManipulateurDeString.reformerString(listeDecodee));
                 ++compteurStep;
                 return;
             }
-            case 6:{
+            case 7:{
                 chaineRecue.setText("[" + LocalTime.now() + "] : " + chaineReconstituee.getText());
+                ++compteurStep;
+                return;
             }
             default:
                 compteurStep = 0;
+                chaineInitiale.clear();
+                chaineReconstituee.clear();
+                chaineDecodee.clear();
+                chaineRecue.clear();
+                chaineSepareeAscii.clear();
+                chaineGroupee.clear();
+                chaineCodee.clear();
         }
     }
 
