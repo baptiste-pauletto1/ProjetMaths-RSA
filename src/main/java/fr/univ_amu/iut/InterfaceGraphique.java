@@ -116,19 +116,24 @@ public class InterfaceGraphique extends Application{
         getHostServices().showDocument("https://cocalc.com/projects/0e93946c-ebbe-4141-986c-ff4daf439173/?session=default");
     }
 
+    public void exit(ActionEvent event) {
+        System.exit(0);
+    }
+
     public void doNextStep (ActionEvent event) throws Exception {
         switch (compteurStep){
             case 0:{
                 while(Calculateur.testPrimalite(Integer.parseInt(textFieldp.getText())) != true)  {
                         textFieldp.clear();
-                        textFieldp.setPromptText("P doit être premier");
+                        textFieldp.setPromptText("P doit être premier.");
                 }
                 while(Calculateur.testPrimalite(Integer.parseInt(textFieldq.getText())) != true)   {
                         textFieldq.clear();
-                        textFieldq.setPromptText("Q doit être premier");
+                        textFieldq.setPromptText("Q doit être premier.");
                 }
                 ++compteurStep;
                 chaineInitiale.setEditable(true);
+                chaineInitiale.setPromptText("Entrez votre message ici.");
                 return;
             }
             case 1: {
@@ -148,7 +153,7 @@ public class InterfaceGraphique extends Application{
                 for (int i = 0; i < chaineDecoupee.size(); i++) {
                     listeCodee.add(EncodeurDecodeur.coder(chaineDecoupee.get(i),calculateur.getE(),calculateur.getN()));
                 }
-                chaineCodee.setText(listeCodee.toString());
+                chaineCodee.setText(ManipulateurDeString.formerSuiteEntiers(listeCodee));
                 ++compteurStep;
                 return;
             }
@@ -186,5 +191,6 @@ public class InterfaceGraphique extends Application{
                 chaineCodee.clear();
         }
     }
+
 
 }

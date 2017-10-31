@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public  class ManipulateurDeString {
 
-
     public static ArrayList<Integer> decouperString(String string)
     {
         ArrayList<Integer> chaineEnAscii = new ArrayList<Integer>();
@@ -23,5 +22,13 @@ public  class ManipulateurDeString {
             Message += (char) (i.intValue());
         }
         return Message;
+    }
+
+    public static String formerSuiteEntiers(ArrayList<Integer> chaineCodee){
+        String chaineRSA = new String();
+        for (Integer i: chaineCodee) {
+            chaineRSA = chaineRSA + i;
+        }
+        return chaineRSA;
     }
 }

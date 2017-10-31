@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="401.0" prefWidth="601.0">
+         <left>
+            <VBox prefHeight="347.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="39.0" prefWidth="600.0">
+                     <children>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" text="Votre message crypté :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField editable="false" prefHeight="39.0" prefWidth="405.0" style="-fx-background-color: lightblue;" text="Une suite d'entiers est attendue ici " />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="chaineCodeeDecrypt" prefHeight="49.0" prefWidth="600.0" promptText="Entrez votre message crypté ici :" />
+                  <HBox prefHeight="0.0" prefWidth="600.0">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="39.0" prefWidth="600.0">
+                     <children>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="38.0" prefWidth="220.0" text="Votre clef privée : ">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="clefPriveeD" prefHeight="39.0" prefWidth="196.0" promptText="Insérez ici votre d" />
+                        <TextField fx:id="clefPriveeN" prefHeight="39.0" prefWidth="183.0" promptText="Insérez ici votre n" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="39.0" prefWidth="600.0">
+                     <children>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" text="Votre message décodé :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <TextField editable="false" prefHeight="39.0" prefWidth="405.0" style="-fx-background-color: pink;" text="A l'aide de la clef privée, on déchiffre le message suivant">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="chaineDecodee" prefHeight="49.0" prefWidth="600.0" promptText="Votre message codé apparaîtra ici." />
+                  <Button defaultButton="true" mnemonicParsing="false" text="Décoder">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="260.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <TextField alignment="CENTER" editable="false" prefHeight="54.0" prefWidth="625.0" style="-fx-background-color: lightgrey;" text="Chat via RSA : Décryptage " BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
