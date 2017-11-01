@@ -18,7 +18,6 @@ public class TestGroupeur {
         System.out.println(listeString);
         ArrayList<String> listeDechiffree = groupeur.grouperChaineAscii(listeString);
         System.out.println(listeDechiffree);
-        System.out.println(groupeur.decouperChaineEn3(listeDechiffree, listeString.size()));
-
+        System.out.println(groupeur.decouperChaineEn3(listeDechiffree));
     }
 }

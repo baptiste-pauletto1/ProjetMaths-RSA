@@ -34,38 +34,35 @@ public class GroupeurDegroupeur {
         while (listeGroupee.get(listeGroupee.size() - 1).equals(" ")) {
             listeGroupee.remove(" ");
         }
-        String chainetmp = listeGroupee.get(listeGroupee.size() - 1);
+        /*String chainetmp = listeGroupee.get(listeGroupee.size() - 1);
         while (chainetmp.length() < 4) {
             chainetmp = "0" + chainetmp;
         }
-        listeGroupee.set(listeGroupee.size() - 1, chainetmp);
+        listeGroupee.set(listeGroupee.size() - 1, chainetmp); */
         return listeGroupee;
     }
 
-    public ArrayList<String> decouperChaineEn3 (ArrayList<String> listeDechiffree, int t) {
+    public ArrayList<String> decouperChaineEn3 (ArrayList<String> listeDechiffree) {
         ArrayList<String> listeDecoupee = new ArrayList<String>();
         int j = 0;
         listeDecoupee.add("");
-        System.out.println(t);
-        for ( int i = 0; j < t; i++) {
+        for ( int i = 0; i < listeDechiffree.size(); i++) {
             while (listeDechiffree.get(i).length() > 0) {
-                if (listeDecoupee.get(j) == "000")
-                    listeDecoupee.set(j, "");
+                /*if (listeDecoupee.get(j) == "000")
+                    listeDecoupee.set(j, ""); */
                 if (listeDecoupee.get(j).length() == 3) {
                     ++j;
                     listeDecoupee.add("");
                 }
                 listeDecoupee.set(j, listeDecoupee.get(j) + listeDechiffree.get(i).substring(0, 1));
                 listeDechiffree.set(i, listeDechiffree.get(i).substring(1));
-                System.out.println("liste dechiffree : "+ listeDechiffree);
-                System.out.println("liste decoupee : " + listeDecoupee);
             }
         }
-        String chainetmp = listeDecoupee.get(listeDecoupee.size()-1);
+        /*String chainetmp = listeDecoupee.get(listeDecoupee.size()-1);
         while (chainetmp.length() < 3) {
             chainetmp = "0" + chainetmp;
         }
-        listeDecoupee.set(listeDecoupee.size()-1, chainetmp);
+        listeDecoupee.set(listeDecoupee.size()-1, chainetmp); */
         return listeDecoupee;
     }
 }
