@@ -24,6 +24,7 @@ public class InterfaceGraphique extends Application{
     private static Stage primStage;
     private int compteurMsg, compteurStep = 0;
     ArrayList<Integer> chaineDecoupee, listeCodee, listeDecodee;
+    ArrayList<String> chaineCodeeGroupe;
     Calculateur calculateur;
 
     @FXML
@@ -36,6 +37,10 @@ public class InterfaceGraphique extends Application{
     private TextArea textAreaDestinataire;
     @FXML
     private Button voirEtapeParEtape;
+    @FXML
+    private Button voirCodage;
+    @FXML
+    private Button voirDecodage;
     @FXML
     private TextField chaineInitiale;
     @FXML
@@ -58,6 +63,20 @@ public class InterfaceGraphique extends Application{
     private TextField textFieldq;
     @FXML
     private TextField textFieldClefPrivee;
+    @FXML
+    private TextField chaineEntree;
+    @FXML
+    private TextField clefPublique;
+    @FXML
+    private TextField clefPrivee;
+    @FXML
+    private TextField chaineCodeeCrypt;
+    @FXML
+    private TextField chaineCodeeDecrypt;
+    @FXML
+    private TextField clefPriveeD;
+    @FXML
+    private TextField clefPriveeN;
 
 
     public static Stage getPrimaryStage() {
@@ -97,6 +116,34 @@ public class InterfaceGraphique extends Application{
         }
     }
 
+    public void ModeCodage(ActionEvent event) throws Exception {
+        if (!voirCodage.isPressed()) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxmlFiles/InterfaceCodage.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Scene scene = new Scene(loader.getRoot());
+            getPrimaryStage().setScene(scene);
+            getPrimaryStage().show();
+        }
+    }
+
+    public void ModeDecodage(ActionEvent event) throws Exception {
+        if (!voirDecodage.isPressed()) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxmlFiles/InterfaceDecodage.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Scene scene = new Scene(loader.getRoot());
+            getPrimaryStage().setScene(scene);
+            getPrimaryStage().show();
+        }
+    }
+
     public void afficherMessage (ActionEvent event) throws Exception{
         String contenu = message.getText();
         ++compteurMsg;
@@ -118,6 +165,37 @@ public class InterfaceGraphique extends Application{
 
     public void exit(ActionEvent event) {
         System.exit(0);
+    }
+
+    public void generer(ActionEvent event) {
+        int e = 19;
+        int n = 187;
+        int d = 59;
+        String chaineACoder = chaineEntree.getText();
+        String chaineTmp="";
+        int tmp;
+        for (int i = 0; i < chaineACoder.length(); i++) {
+            tmp = EncodeurDecodeur.coder(chaineACoder.charAt(i),e,n);
+            chaineTmp = chaineTmp + tmp + " ";
+        }
+        clefPrivee.setText("(" + d + "," + n +")");
+        clefPublique.setText("(" + e + "," + n +")" );
+        chaineCodeeCrypt.setText(chaineTmp);
+    }
+
+    public void decrypter (ActionEvent event) {
+        String chaineADecoder = chaineCodeeDecrypt.getText();
+        ArrayList<Integer> temporaire = new ArrayList<>();
+        String tmp ="";
+        for (int i = 0; i <chaineADecoder.length() ; i++) {
+            while (!(chaineADecoder.charAt(i) == ' ' )) {
+                tmp = tmp + chaineADecoder.charAt(i);
+                ++i;
+            }
+            temporaire.add(Integer.parseInt(tmp));
+            tmp ="";
+        }
+        chaineDecodee.setText(ManipulateurDeString.reformerString(EncodeurDecodeur.decoder(temporaire,Integer.parseInt(clefPriveeD.getText()),Integer.parseInt(clefPriveeN.getText()))));
     }
 
     public void doNextStep (ActionEvent event) throws Exception {
@@ -144,7 +222,11 @@ public class InterfaceGraphique extends Application{
                 return;
             }
             case 2:{
-                chaineGroupee.setText("Pas encore fait cette merde");
+                ArrayList<String> chaineAscii = new ArrayList<>();
+                for (Integer i: chaineDecoupee) {
+                    chaineAscii.add(i.toString());
+                }
+                chaineGroupee.setText(GroupeurDegroupeur.grouperChaineAscii(chaineAscii).toString());
                 ++compteurStep;
                 return;
             }
@@ -160,12 +242,16 @@ public class InterfaceGraphique extends Application{
             case 4:{
                 textFieldClefPrivee.setText("(" + calculateur.getD() + "," + calculateur.getN() + ")");
                 listeDecodee = EncodeurDecodeur.decoder(listeCodee,calculateur.getD(),calculateur.getN());
-                chaineDecodee.setText(listeDecodee.toString());
+                chaineCodeeGroupe = new ArrayList<>();
+                for (Integer i: chaineDecoupee) {
+                    chaineCodeeGroupe.add(i.toString());
+                }
+                chaineDecodee.setText(GroupeurDegroupeur.grouperChaineAscii(chaineCodeeGroupe).toString());
                 ++compteurStep;
                 return;
             }
             case 5:{
-                chaineDegroupee.setText("Cette merde non plus");
+                chaineDegroupee.setText(chaineDecoupee.toString());
                 ++compteurStep;
                 return;
             }

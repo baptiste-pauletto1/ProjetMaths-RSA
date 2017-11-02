@@ -11,9 +11,10 @@ import static java.lang.StrictMath.sqrt;
  * Created by l16000680 on 26/10/17.
  */
 public class GroupeurDegroupeur {
-    public ArrayList<String> grouperChaineAscii(ArrayList<String> chaineEnAscii) {
+    public static ArrayList<String> grouperChaineAscii(ArrayList<String> chaineEnAscii) {
         ArrayList<String> listeGroupee = new ArrayList<String>();
         int j = 0;
+        String chainetmp;
         /*boolean sortie = false; */
         for (int i = 0; i < chaineEnAscii.size()-1; i++) {
             /*if (sortie == true)
@@ -46,7 +47,7 @@ public class GroupeurDegroupeur {
         return listeGroupee;
     }
 
-    public ArrayList<String> decouperChaineEn3 (ArrayList<String> listeDechiffree) {
+    public static ArrayList<String> decouperChaineEn3 (ArrayList<String> listeDechiffree) {
         ArrayList<String> listeDecoupee = new ArrayList<String>();
         int j = 0;
         listeDecoupee.add("");
