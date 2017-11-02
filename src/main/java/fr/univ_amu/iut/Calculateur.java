@@ -1,8 +1,14 @@
 package fr.univ_amu.iut;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Random;
+import java.util.stream.Stream;
+
 import static java.lang.Math.sqrt;
 
 /**
@@ -31,7 +37,7 @@ public class Calculateur {
     }
 
     private void calculersValeurs () {
-        rentrer_pEtq();
+        generer_pEtq();
         calculer_n();
         calculer_phin();
         calculer_e();
@@ -118,6 +124,48 @@ public class Calculateur {
             q = menu("Veuillez insérer q, nombre premier");
         }
         this.q = q;
+    }
+
+    private static int getRandomNumberInRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+    private void generer_pEtq () {
+        String fileName = "C:/Users/admin/Documents/GitHub/ProjetMaths-RSA/src/PrimesTo10k.txt";
+
+        try {
+            BufferedReader buff_p = new BufferedReader(new FileReader(fileName));
+            String p = " ";
+
+            int rand_p = getRandomNumberInRange(1, 1225);
+            int k = 0;
+            while (k < rand_p) {
+                p = buff_p.readLine();
+                k += 1;
+            }
+            this.p = Integer.parseInt(p);
+            buff_p.close();
+
+
+            BufferedReader buff_q = new BufferedReader(new FileReader(fileName));
+            String q = " ";
+
+            int rand_q = getRandomNumberInRange(1, 1225);
+            int n = 0;
+            while (n < rand_q) {
+                q = buff_q.readLine();
+                n += 1;
+            }
+            this.q = Integer.parseInt(q);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void calculer_n () {
