@@ -9,7 +9,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="386.0" prefWidth="581.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univ_amu.iut.InterfaceGraphique">
    <children>
       <BorderPane prefHeight="401.0" prefWidth="601.0">
@@ -74,8 +73,8 @@
                         </TextField>
                      </children>
                   </HBox>
-                  <TextField fx:id="chaineCodee" prefHeight="49.0" prefWidth="600.0" promptText="Votre message codé apparaîtra ici." />
-                  <Button defaultButton="true" mnemonicParsing="false" text="Générer">
+                  <TextField fx:id="chaineCodeeCrypt" prefHeight="49.0" prefWidth="600.0" promptText="Votre message codé apparaîtra ici." />
+                  <Button fx:id="boutonGenerer" defaultButton="true" mnemonicParsing="false" onAction="#generer" text="Générer">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -83,6 +82,20 @@
                         <Insets left="260.0" />
                      </VBox.margin>
                   </Button>
+                  <HBox prefHeight="37.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="voirDecodage" mnemonicParsing="false" onAction="#ModeDecodage" prefHeight="25.0" prefWidth="93.0" text="Décryptage">
+                           <HBox.margin>
+                              <Insets left="110.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="70.0" text="Quitter">
+                           <HBox.margin>
+                              <Insets left="250.0" right="110.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </left>

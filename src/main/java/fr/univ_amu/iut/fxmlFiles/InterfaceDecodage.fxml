@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univ_amu.iut.InterfaceGraphique">
    <children>
       <BorderPane prefHeight="401.0" prefWidth="601.0">
          <left>
@@ -60,7 +59,7 @@
                      </children>
                   </HBox>
                   <TextField fx:id="chaineDecodee" prefHeight="49.0" prefWidth="600.0" promptText="Votre message codé apparaîtra ici." />
-                  <Button defaultButton="true" mnemonicParsing="false" text="Décoder">
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#decrypter" text="Décoder">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -68,6 +67,20 @@
                         <Insets left="260.0" />
                      </VBox.margin>
                   </Button>
+                  <HBox prefHeight="62.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="voirCodage" mnemonicParsing="false" onAction="#ModeCodage" prefHeight="25.0" prefWidth="88.0" text="Cryptage">
+                           <HBox.margin>
+                              <Insets left="110.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="70.0" text="Quitter">
+                           <HBox.margin>
+                              <Insets left="250.0" right="110.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </left>
