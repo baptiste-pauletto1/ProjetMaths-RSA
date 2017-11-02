@@ -168,18 +168,16 @@ public class InterfaceGraphique extends Application{
     }
 
     public void generer(ActionEvent event) {
-        int e = 19;
-        int n = 187;
-        int d = 59;
+        Calculateur calculateurGenere = new Calculateur();
         String chaineACoder = chaineEntree.getText();
         String chaineTmp="";
         int tmp;
         for (int i = 0; i < chaineACoder.length(); i++) {
-            tmp = EncodeurDecodeur.coder(chaineACoder.charAt(i),e,n);
+            tmp = EncodeurDecodeur.coder(chaineACoder.charAt(i),calculateurGenere.getE(),calculateurGenere.getN());
             chaineTmp = chaineTmp + tmp + " ";
         }
-        clefPrivee.setText("(" + d + "," + n +")");
-        clefPublique.setText("(" + e + "," + n +")" );
+        clefPrivee.setText("(" + calculateurGenere.getD() + "," + calculateurGenere.getN() +")");
+        clefPublique.setText("(" + calculateurGenere.getE() + "," + calculateurGenere.getN() +")" );
         chaineCodeeCrypt.setText(chaineTmp);
     }
 

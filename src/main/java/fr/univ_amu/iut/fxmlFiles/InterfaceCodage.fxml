@@ -40,7 +40,7 @@
                               <Font size="17.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="clefPublique" editable="false" prefHeight="38.0" prefWidth="394.0" promptText="Appuyez sur générer pour générer vos clefs de cryptage." />
+                        <TextField fx:id="clefPublique" editable="false" prefHeight="38.0" prefWidth="394.0" promptText="Appuyez sur générer pour générer votre clef publique." />
                      </children>
                      <VBox.margin>
                         <Insets top="30.0" />
@@ -53,7 +53,7 @@
                               <Font size="17.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="clefPrivee" editable="false" prefHeight="38.0" prefWidth="397.0" promptText="Appuyez sur générer pour générer vos clefs de cryptage." />
+                        <TextField fx:id="clefPrivee" editable="false" prefHeight="38.0" prefWidth="397.0" promptText="Appuyez sur générer pour générer votre clef privée." />
                      </children>
                   </HBox>
                   <HBox prefHeight="39.0" prefWidth="600.0">

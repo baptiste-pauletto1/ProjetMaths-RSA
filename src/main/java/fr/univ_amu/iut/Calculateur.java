@@ -41,9 +41,9 @@ public class Calculateur {
         calculer_n();
         calculer_phin();
         calculer_e();
-        System.out.println("Clé publique (" + e + ',' + n + ')');
+        //System.out.println("Clé publique (" + e + ',' + n + ')');
         calculer_d();
-        System.out.println("Clé privée (" + d + ',' + n + ')');
+        //System.out.println("Clé privée (" + d + ',' + n + ')');
     }
 
     private int menu(String string) {
@@ -137,7 +137,7 @@ public class Calculateur {
     }
 
     private void generer_pEtq () {
-        String fileName = "C:/Users/admin/Documents/GitHub/ProjetMaths-RSA/src/PrimesTo10k.txt";
+        String fileName = "C:\\Users\\Baptiste\\Documents\\GitHub\\ProjetMaths-RSA\\src\\main\\java\\fr\\univ_amu\\iut\\readFiles\\PrimesTo10k.txt"; // A CHANGER
 
         try {
             BufferedReader buff_p = new BufferedReader(new FileReader(fileName));
@@ -221,5 +221,6 @@ public class Calculateur {
     public int getD() {
         return d;
     }
+
 
 }

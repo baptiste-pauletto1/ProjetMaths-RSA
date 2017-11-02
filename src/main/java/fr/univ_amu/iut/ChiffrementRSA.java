@@ -13,20 +13,21 @@ public class ChiffrementRSA {
     public static void main(String[] args){
         String message = menu();
         ManipulateurDeString manipulateurDeString = new ManipulateurDeString();
-        ArrayList<Integer> tmp = manipulateurDeString.decouperString(message);
+        ArrayList<Integer> tmp = ManipulateurDeString.decouperString(message);
         System.out.println(tmp);
 
         EncodeurDecodeur encodeurDecodeur = new EncodeurDecodeur();
-        Calculateur calculateur = new Calculateur();
+        Calculateur calculateur = new Calculateur(11,17);
+        System.out.println(calculateur.getE() + " " +calculateur.getN());
         ArrayList<Integer> listeCodee = new ArrayList<Integer>();
         for (int i = 0; i < tmp.size(); i++) {
-            listeCodee.add(encodeurDecodeur.coder(tmp.get(i),calculateur.getE(),calculateur.getN()));
+            listeCodee.add(EncodeurDecodeur.coder(tmp.get(i),calculateur.getE(),calculateur.getN()));
         }
         System.out.println(listeCodee);
         ArrayList<Integer> listeDecodee;
-        listeDecodee = encodeurDecodeur.decoder(listeCodee,calculateur.getD(),calculateur.getN());
+        listeDecodee = EncodeurDecodeur.decoder(listeCodee,calculateur.getD(),calculateur.getN());
 
-        System.out.println(manipulateurDeString.reformerString(listeDecodee));
+        System.out.println(ManipulateurDeString.reformerString(listeDecodee));
 
 
     }
