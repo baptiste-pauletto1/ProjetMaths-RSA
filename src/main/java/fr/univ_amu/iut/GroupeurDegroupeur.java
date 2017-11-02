@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static java.lang.StrictMath.log10;
+import static java.lang.StrictMath.sqrt;
 
 /**
  * Created by l16000680 on 26/10/17.
@@ -13,26 +14,29 @@ public class GroupeurDegroupeur {
     public ArrayList<String> grouperChaineAscii(ArrayList<String> chaineEnAscii) {
         ArrayList<String> listeGroupee = new ArrayList<String>();
         int j = 0;
-        boolean sortie = false;
+        /*boolean sortie = false; */
         for (int i = 0; i < chaineEnAscii.size()-1; i++) {
-            if (sortie)
-                break;
+            /*if (sortie == true)
+                break; */
             listeGroupee.add(chaineEnAscii.get(i));
             while (listeGroupee.get(j).length() < 4) {
                 while (chaineEnAscii.get(i+1).equals("") && i+1 != (chaineEnAscii.size()-1 ))  {
                     ++i;
                 }
-                if (chaineEnAscii.get(i+1).equals("") && i+1 == (chaineEnAscii.size() -1)) {
-                    sortie = true;
+                if (chaineEnAscii.get(i+1).equals("") && i+1 == (chaineEnAscii.size()-1)) {
+                    ++i;
                     break;
                 }
                 listeGroupee.set(j, listeGroupee.get(j) + chaineEnAscii.get(i + 1).substring(0, 1));
                 chaineEnAscii.set(i + 1, chaineEnAscii.get(i + 1).substring(1));
+                /*System.out.println("Chaine ascii : " + chaineEnAscii);
+                System.out.println("liste groupée : " + listeGroupee); */
             }
             ++j;
         }
-        while (listeGroupee.get(listeGroupee.size() - 1).equals(" ")) {
-            listeGroupee.remove(" ");
+        listeGroupee.add(chaineEnAscii.get(chaineEnAscii.size()-1));
+        if (listeGroupee.get(listeGroupee.size()-1).equals("")) {
+            listeGroupee.remove("");
         }
         /*String chainetmp = listeGroupee.get(listeGroupee.size() - 1);
         while (chainetmp.length() < 4) {

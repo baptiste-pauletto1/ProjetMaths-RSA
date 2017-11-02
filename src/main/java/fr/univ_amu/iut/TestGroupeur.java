@@ -15,6 +15,11 @@ public class TestGroupeur {
         listeString.add("920");
         listeString.add("920");
         listeString.add("920");
+        listeString.add("012");
+        listeString.add("012");
+        listeString.add("012");
+        listeString.add("012");
+
         System.out.println(listeString);
         ArrayList<String> listeDechiffree = groupeur.grouperChaineAscii(listeString);
         System.out.println(listeDechiffree);
