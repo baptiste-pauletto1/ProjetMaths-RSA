@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univ_amu.iut.InterfaceGraphique">
+   <children>
+      <BorderPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <TextField alignment="CENTER" editable="false" prefHeight="54.0" prefWidth="625.0" style="-fx-background-color: lightgrey;" text="Chat via Cryptage RSA " BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+         </top>
+         <center>
+            <VBox prefHeight="111.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="afficheurTour" editable="false" text="Votre message :">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="message" promptText="Entrez votre message ici.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <HBox prefHeight="207.0" prefWidth="600.0">
+                     <children>
+                        <TextArea fx:id="textAreaVous" editable="false" prefHeight="182.0" prefWidth="299.0" />
+                        <TextArea fx:id="textAreaDestinataire" editable="false" prefHeight="182.0" prefWidth="303.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="600.0">
+                     <children>
+                        <TextField alignment="CENTER" editable="false" prefHeight="35.0" prefWidth="301.0" style="-fx-background-color: lightgreen;" text="Vos messages reçus" />
+                        <TextField alignment="CENTER" editable="false" prefHeight="35.0" prefWidth="301.0" style="-fx-background-color: cyan;" text="Vos messages envoyés" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="25.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="EnvoyeurMessage" alignment="CENTER" contentDisplay="TOP" defaultButton="true" mnemonicParsing="false" onAction="#afficherMessage" prefHeight="25.0" prefWidth="241.0" text="Envoyer message">
+                           <HBox.margin>
+                              <Insets left="30.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="voirEtapeParEtape" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#ModeEtape" prefHeight="25.0" prefWidth="253.0" text="Voir étape par étape" textFill="#d71919">
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="25.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="voirCodage" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#ModeCodage" prefHeight="25.0" prefWidth="241.0" text="Onglet de cryptage" textFill="#3027da">
+                           <HBox.margin>
+                              <Insets left="30.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="voirDecodage" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#ModeDecodage" prefHeight="25.0" prefWidth="253.0" text="Onglet de décryptage" textFill="#2b1ad6">
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Hyperlink fx:id="lienSagemaths" alignment="TOP_LEFT" onAction="#afficheSite" text="Projet SageMaths">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="240.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

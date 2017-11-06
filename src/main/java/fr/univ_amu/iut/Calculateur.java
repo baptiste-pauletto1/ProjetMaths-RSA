@@ -137,7 +137,7 @@ public class Calculateur {
     }
 
     private void generer_pEtq () {
-        String fileName = "C:\\Users\\Baptiste\\Documents\\GitHub\\ProjetMaths-RSA\\src\\main\\java\\fr\\univ_amu\\iut\\readFiles\\PrimesTo10k.txt"; // A CHANGER
+        String fileName = "src/main/resources/fr/univ_amu/iut/readFiles/PrimesTo10k.txt"; // A CHANGER
 
         try {
             BufferedReader buff_p = new BufferedReader(new FileReader(fileName));
