@@ -137,13 +137,13 @@ public class Calculateur {
     }
 
     private void generer_pEtq () {
-        String fileName = "src/main/resources/fr/univ_amu/iut/readFiles/PrimesTo10k.txt"; // A CHANGER
+        String fileName = "src/main/resources/fr/univ_amu/iut/readFiles/PrimesTo1k.txt"; // A CHANGER
 
         try {
             BufferedReader buff_p = new BufferedReader(new FileReader(fileName));
             String p = " ";
 
-            int rand_p = getRandomNumberInRange(1, 1225);
+            int rand_p = getRandomNumberInRange(1, 164);
             int k = 0;
             while (k < rand_p) {
                 p = buff_p.readLine();
@@ -156,7 +156,7 @@ public class Calculateur {
             BufferedReader buff_q = new BufferedReader(new FileReader(fileName));
             String q = " ";
 
-            int rand_q = getRandomNumberInRange(1, 1225);
+            int rand_q = getRandomNumberInRange(1, 164);
             int n = 0;
             while (n < rand_q) {
                 q = buff_q.readLine();
